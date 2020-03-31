@@ -1,0 +1,167 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: #354A54;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 4fr 1fr 1fr;
+      grid-template-rows: 4fr 1fr 1fr;
+      grid-template-areas: "timer timer timer laps" "timer timer timer laps" "buttons buttons buttons laps";
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: linear-gradient(125deg, #28C7FA, #00D9F1, #00E8D6, #6AF3B1, #B3F98B, #F9F871);
+  background-size: 800%;
+  -webkit-animation: bganimation 10s infinite;
+          animation: bganimation 10s infinite;
+}
+
+.timer {
+  width: 100%;
+  height: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: timer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.timer-value {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.laps {
+  width: 100%;
+  height: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 4;
+  grid-area: laps;
+  background-color: rgba(245, 245, 245, 0.7);
+  text-align: center;
+}
+
+.laps-results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+p {
+  font-size: 25px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: buttons;
+}
+
+.btn {
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid rgba(245, 245, 245, 0);
+  font-weight: 500;
+  font-size: 30px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  border: 2px solid #3d5af1;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background-color: #43dde6;
+}
+
+#inputTimer {
+  border-radius: 2px;
+  border: none;
+  height: 30px;
+  width: 200px;
+  font-size: 25px;
+  border: 2px solid rgba(245, 245, 245, 0);
+  outline: none;
+  margin-right: 5px;
+}
+
+#inputTimer:focus,
+#inputTimer:hover {
+  border: 2px solid #3d5af1;
+}
+
+@-webkit-keyframes bganimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bganimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.off {
+  pointer-events: none;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
